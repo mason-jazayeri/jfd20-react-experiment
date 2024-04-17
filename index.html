@@ -22,19 +22,19 @@
         document.body.appendChild(rootElement);
 
         function Navbar(props) {
-            const categoryNamesLiElementsArray = [];
-            for (let i = 0; i < props.menuCategoriesList.length; i++) {
-                let liEl = React.createElement("li", {
-                    className: "category-name",
-                    children: [
-                        props.menuCategoriesList[i].lableFarsi,
-                    ],
+            function renderFarm() {
+                return props.menuCategoriesList.map(function (item) {
+                    return React.createElement("li", {
+                        className: "categoryName",
+                        children: [
+                            item.lableFarsi,
+                        ],
+                    });
                 });
-                categoryNamesLiElementsArray.push(liEl);
             }
             return React.createElement("ul", {
                 className: "navbar",
-                children: categoryNamesLiElementsArray,
+                children: renderFarm(),
             });
         }
 
