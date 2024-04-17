@@ -23,24 +23,23 @@
 
         function Navbar(props) {
             const categoryNamesLiElementsArray = [];
-            for (let i = 0; i < props.length; i++) {
+            for (let i = 0; i < props.menuCategoriesList.length; i++) {
                 let liEl = React.createElement("li", {
                     className: "category-name",
                     children: [
-                        props[i].lableFarsi,
+                        props.menuCategoriesList[i].lableFarsi,
                     ],
                 });
                 categoryNamesLiElementsArray.push(liEl);
             }
-            const navbar = React.createElement("ul", {
+            return React.createElement("ul", {
                 className: "navbar",
                 children: categoryNamesLiElementsArray,
             });
-            return navbar;
         }
 
         function Header() {
-            const header = React.createElement("div", {
+            return React.createElement("div", {
                 className: "header",
                 children: [
                     React.createElement("div", {
@@ -59,25 +58,23 @@
                                             "Mason Cafe & Restaurant Since 1982",
                                         ],
                                     }),
-                                    Navbar(menuCategories1),
-                                    Navbar(menuCategories2),
+                                    Navbar({ menuCategoriesList: menuCategories1, }),
+                                    Navbar({ menuCategoriesList: menuCategories2, }),
                                 ],
                             }),
                         ],
                     }),
                 ],
             });
-            return header;
         }
 
         function Footer() {
-            const footer = React.createElement("div", {
+            return React.createElement("div", {
                 className: "footer",
                 children: [
                     "فوتر",
                 ],
             });
-            return footer;
         }
 
         const siteWrapper = React.createElement("div", {
