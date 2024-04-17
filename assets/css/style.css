@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-ExtraLight') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url('../fonts/vazirmatn/webfonts/Vazirmatn-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    direction: rtl;
+    font-family: Vazirmatn;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.header {
+    height: 270px;
+    background-image: url("../images/header-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .header-content h1 {
+font-weight: 300;
+font-size: 2.5rem;
+color: #fff;
+padding-top: 3rem;
+padding-bottom: .8rem;
+}
+
+.header .header-content h2 {
+font-weight: 300;
+font-size: 1.5rem;
+color: #666;
+padding-bottom: 4rem;
+}
+
+.header .header-content .navbar {
+display: flex;
+justify-content: center;
+gap: 3rem;
+color: #999;
+background-color: #fff;
+font-size: 1.6rem;
+padding: .5rem;
+margin: .5rem;
+}
+
+.header .header-content .navbar .category-name {
+cursor: pointer;
+transition: all .5s ease-out;
+}
+
+.header .header-content .navbar .category-name:hover {
+color: #e44c2a;
+}
+
+.footer {
+    height: 270px;
+    font-weight: 300;
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 8px;
+    }
+
+    .header {
+        height: 130px;
+        background-size: auto;
+    }
+
+    .header .header-content h1 {
+        padding-top: 1rem;
+        padding-bottom: .8rem;
+    }
+
+    .header .header-content h2 {
+        padding-bottom: 2rem;
+    }
+
+    .header .header-content .navbar {
+        gap: 2rem;
+    }
+}

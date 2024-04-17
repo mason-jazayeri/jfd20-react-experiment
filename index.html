@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Experiment</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script> -->
+    <!-- <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script> -->
+    <script src="assets/js/react/react.development.js"></script>
+    <script src="assets/js/react/react-dom.development.js"></script>
+    <!-- <script src="assets/js/babel.js"></script> -->
+    <script src="assets/js/data.js"></script>
+    <script>
+        const rootElement = document.createElement("DIV");
+        rootElement.id = "root";
+        document.body.appendChild(rootElement);
+
+        function Navbar(props) {
+            const categoryNamesLiElementsArray = [];
+            for (let i = 0; i < props.length; i++) {
+                let liEl = React.createElement("li", {
+                    className: "category-name",
+                    children: [
+                        props[i].lableFarsi,
+                    ],
+                });
+                categoryNamesLiElementsArray.push(liEl);
+            }
+            const navbar = React.createElement("ul", {
+                className: "navbar",
+                children: categoryNamesLiElementsArray,
+            });
+            // console.log(props);
+            return navbar;
+        }
+
+        function Header() {
+            const header = React.createElement("div", {
+                className: "header",
+                children: [
+                    React.createElement("div", {
+                        className: "container",
+                        children: [
+                            React.createElement("div", {
+                                className: "header-content",
+                                children: [
+                                    React.createElement("h1", {
+                                        children: [
+                                            "کافه رستوران مِیسِن",
+                                        ],
+                                    }),
+                                    React.createElement("h2", {
+                                        children: [
+                                            "Mason Cafe & Restaurant Since 1982",
+                                        ],
+                                    }),
+                                    Navbar(menuCategories1),
+                                    Navbar(menuCategories2),
+                                ],
+                            }),
+                        ],
+                    }),
+                ],
+            });
+            return header;
+        }
+
+        function Footer() {
+            const footer = React.createElement("div", {
+                className: "footer",
+                children: [
+                    "فوتر",
+                ],
+            });
+            return footer;
+        }
+
+        const siteWrapper = React.createElement("div", {
+            className: "site-wrapper",
+            children: [
+                Header(),
+                Footer(),
+            ]
+        });
+
+        ReactDOM.render(siteWrapper, rootElement);
+    </script>
+</body>
+
+</html>
