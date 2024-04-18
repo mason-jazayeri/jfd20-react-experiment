@@ -14,9 +14,9 @@
     <!-- <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script> -->
     <script src="assets/js/react/react.development.js"></script>
     <script src="assets/js/react/react-dom.development.js"></script>
-    <!-- <script src="assets/js/babel.js"></script> -->
+    <script src="assets/js/babel.js"></script>
     <script src="assets/js/data.js"></script>
-    <script>
+    <script type="text/babel">
         const rootElement = document.createElement("DIV");
         rootElement.id = "root";
         document.body.appendChild(rootElement);
@@ -24,66 +24,43 @@
         function Navbar(props) {
             function renderFarm() {
                 return props.menuCategoriesList.map(function (item) {
-                    return React.createElement("li", {
-                        className: "categoryName",
-                        children: [
-                            item.lableFarsi,
-                        ],
-                    });
+                    return (
+                        <li className="category-name">{item.lableFarsi}</li>
+                    );
                 });
             }
-            return React.createElement("ul", {
-                className: "navbar",
-                children: renderFarm(),
-            });
+            return (
+                <ul className="navbar">{renderFarm()}</ul>
+            );
         }
 
         function Header() {
-            return React.createElement("div", {
-                className: "header",
-                children: [
-                    React.createElement("div", {
-                        className: "container",
-                        children: [
-                            React.createElement("div", {
-                                className: "header-content",
-                                children: [
-                                    React.createElement("h1", {
-                                        children: [
-                                            "کافه رستوران مِیسِن",
-                                        ],
-                                    }),
-                                    React.createElement("h2", {
-                                        children: [
-                                            "Mason Cafe & Restaurant Since 1982",
-                                        ],
-                                    }),
-                                    Navbar({ menuCategoriesList: menuCategories1, }),
-                                    Navbar({ menuCategoriesList: menuCategories2, }),
-                                ],
-                            }),
-                        ],
-                    }),
-                ],
-            });
+            return (
+                <div className="header">
+                    <div className="container">
+                        <div className="header-content">
+                            <h1>کافه رستوران مِیسِن</h1>
+                            <h2>Mason Cafe & Restaurant Since 1982</h2>
+                            <Navbar menuCategoriesList={menuCategories1}></Navbar>
+                            <Navbar menuCategoriesList={menuCategories2}></Navbar>
+                        </div>
+                    </div>
+                </div>
+            );
         }
 
         function Footer() {
-            return React.createElement("div", {
-                className: "footer",
-                children: [
-                    "فوتر",
-                ],
-            });
+            return (
+                <div className="footer">فوتر</div>
+            );
         }
 
-        const siteWrapper = React.createElement("div", {
-            className: "site-wrapper",
-            children: [
-                Header(),
-                Footer(),
-            ]
-        });
+        const siteWrapper = (
+            <div className="site-wrapper">
+                <Header></Header>
+                <Footer></Footer>
+            </div>
+        );
 
         ReactDOM.render(siteWrapper, rootElement);
     </script>
