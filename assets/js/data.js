@@ -1,4 +1,4 @@
-var menuCategories1 = [
+export var menuCategories1 = [
     {
         name: "all items",
         lableFarsi: "همه موارد"
@@ -24,7 +24,7 @@ var menuCategories1 = [
         lableFarsi: "نوشیدنی سرد"
     },
 ]
-var menuCategories2 = [
+export var menuCategories2 = [
     {
         name: "all items",
         lableFarsi: "همه موارد"
@@ -42,7 +42,7 @@ var menuCategories2 = [
         lableFarsi: "شام"
     },
 ]
-var menuItems = [
+export var menuItems = [
     {
         id: 1,
         name: "آیس آمریکانو",
